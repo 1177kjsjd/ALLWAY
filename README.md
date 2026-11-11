@@ -1,2 +1,38 @@
-# ALLWAY
-An accessible navigation app that helps wheelchair users, visually impaired people, and pedestrians find safer and more accessible routes.
+# 모두의 길 ALLWAY — MVP 0.1
+
+Android/iOS용 접근성 보행 내비게이션 앱의 시작 프로젝트입니다.
+
+## 현재 포함된 기능
+- React Native + Expo 공통 Android/iOS 앱
+- 현재 위치 권한 요청 및 GPS 위치 표시
+- 지도 화면 (react-native-maps)
+- 이동 유형 선택: 휠체어 / 시각장애 / 보행 약자 / 일반 보행
+- Valhalla 보행 경로 API 연동 코드
+- 음성 안내 (Expo Speech)
+- 장애물 제보 UI 및 현재 위치 기반 로컬 임시 저장
+- 미검증 제보를 지도 마커로 표시
+
+## 아직 연결/구현이 필요한 기능
+- 목적지 검색(지오코딩) 및 지도 탭으로 목적지 좌표 지정
+- 실제 Valhalla 서버 운영 및 접근성 태그 데이터 품질 검증
+- 지속적인 백그라운드 위치 추적, 경로 이탈 재탐색, 단계별 실시간 음성 안내
+- Supabase 로그인/서버 저장/사진 업로드/제보 검수 및 동기화
+- 점자블록, 신호등, 횡단보도, 보도 턱의 현장 검증 데이터
+- 앱스토어/플레이스토어 서명 및 배포 설정
+
+## 실행 방법
+1. Node.js LTS 설치
+2. 프로젝트 폴더에서 `npm install`
+3. `.env.example`을 `.env`로 복사하고 Valhalla 서버 주소 설정
+4. `npx expo start`
+5. Expo Go 또는 개발 빌드로 QR 코드를 스캔
+
+## Android / iOS 지도 설정
+`app.json`의 `YOUR_GOOGLE_MAPS_API_KEY`를 본인이 발급한 키로 교체해야 Android 지도 타일이 표시됩니다.
+iOS는 지도 SDK 설정과 배포 환경에 따라 별도 키 설정이 필요할 수 있습니다.
+
+## 중요한 안전 고지
+이 프로젝트는 개발용 MVP입니다. 경로 결과는 접근성이나 안전을 보장하지 않습니다. OSM의 경사/계단/휠체어 관련 태그는 지역별로 누락될 수 있습니다. 미확인 구간을 안전하다고 표시하지 말고, 실제 장애인 당사자와 함께 현장 검증한 뒤 제한된 지역에서 시험 운영하세요.
+
+## 개인정보
+현재 위치는 권한 허용 후 앱 화면에 사용합니다. 이 MVP는 위치를 서버에 전송하지 않습니다. 제보도 메모리 내 임시 저장이며 앱을 종료하면 사라집니다.

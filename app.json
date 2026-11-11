@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "모두의 길 ALLWAY",
+    "slug": "allway-accessible-navigation",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "현재 위치를 지도에 표시하고 보행 경로를 안내하기 위해 위치 권한이 필요합니다."
+      }
+    },
+    "android": {
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
+      "config": {
+        "googleMaps": {
+          "apiKey": "YOUR_GOOGLE_MAPS_API_KEY"
+        }
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "현재 위치를 지도에 표시하고 보행 경로를 안내하기 위해 위치 권한이 필요합니다."
+        }
+      ]
+    ]
+  }
+}
